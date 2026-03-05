@@ -1,13 +1,14 @@
 ﻿using Saascade.Blazor.Components.Base;
+using Saascade.Blazor.Components.Base.Extensions;
 
-namespace Saascade.Blazor.Components.ComponentLibraries;
+namespace Saascade.Blazor.Components.ComponentLibraries.Bootstrap5;
 
-public class Bootstrap5ComponentLibrary : IComponentLibrary
+public class VanillaBootstrap5ComponentLibrary : IComponentLibrary
 {
     public ComponentLibraryFoundation Foundation { get; } = ComponentLibraryFoundation.Bootstrap5;
 
     public string GetClassesForComponent<T>(T component) where T : BaseComponent
-        => component.GetType().Name switch
+        => component.GetStandardCssClassesForBasicHtmlElements() ?? component.GetType().Name switch
         {
             nameof(Button) => "btn",
             nameof(Card) => "card",

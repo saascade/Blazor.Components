@@ -1,0 +1,22 @@
+﻿@inherits BaseComponentWithRequiredChildContent
+<CascadingValue Name="Parent" Value="@this.Parent" IsFixed="true">
+    <A Id="@Id"
+            To="@To"
+            Target="Target"            
+            Name="@Name"
+            Class="@GetFinalClassNames()"
+            Style="@Style"
+            Tooltip="@Tooltip"
+            ChildContent="@ChildContent"
+            AriaLabel="@AriaLabel"
+            AriaLabelledby="@AriaLabelledby"
+            AriaRole="@AriaRole" />
+</CascadingValue>
+@code
+{
+    [Parameter, EditorRequired]
+    public string To { get; set; }
+
+    [Parameter]
+    public HyperlinkTarget Target { get; set; }
+}

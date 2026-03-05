@@ -4,7 +4,7 @@ public enum ComponentLibraryFoundation
 {
     Unknown = 0,
 
-    Vanilla,
+    Nothing,
     Tailwind,
     Bootstrap4,
     Bootstrap5

@@ -1,0 +1,4 @@
+﻿@inherits BaseComponentWithRequiredChildContent
+<CascadingValue Name="Parent" Value="@this" IsFixed="true">
+    <ui id="@Id" data-name="@Name" data-fullname="@GetFullname()" class="@GetFinalClassNames()" style="@Style" title="@Tooltip">@ChildContent</ui>
+</CascadingValue>

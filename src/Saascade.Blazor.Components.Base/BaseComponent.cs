@@ -1,21 +1,23 @@
 ﻿using Humanizer;
 using Microsoft.AspNetCore.Components;
-using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection; 
 
 namespace Saascade.Blazor.Components.Base;
 
 public abstract class BaseComponent : ComponentBase
 {
-    [CascadingParameter(Name = "Parent")] public virtual BaseComponent? Parent { get; set; }
+    [Parameter]
+    [CascadingParameter(Name = "Parent")]
+    public virtual BaseComponent? Parent { get; set; }
 
-    [Parameter] public virtual string Id { get; set; }
-    [Parameter] public virtual string Name { get; set; }
-    [Parameter] public virtual string Class { get; set; }
-    [Parameter] public virtual string Style { get; set; }
-    [Parameter] public virtual string Tooltip { get; set; }
-    [Parameter] public virtual string AriaLabel { get; set; }
-    [Parameter] public virtual string AriaLabelledby { get; set; }
-    [Parameter] public virtual string AriaRole { get; set; }
+    [Parameter] public virtual string? Id { get; set; }
+    [Parameter] public virtual string? Name { get; set; }
+    [Parameter] public virtual string? Class { get; set; }
+    [Parameter] public virtual string? Style { get; set; }
+    [Parameter] public virtual string? Tooltip { get; set; }
+    [Parameter] public virtual string? AriaLabel { get; set; }
+    [Parameter] public virtual string? AriaLabelledby { get; set; }
+    [Parameter] public virtual string? AriaRole { get; set; }
 
 //    [Parameter] public virtual Dictionary<string, string> Data { get; set; } = [];
 
@@ -30,8 +32,8 @@ public abstract class BaseComponent : ComponentBase
     {
         componentLibraryCssClasses = GetComponentLibraryCssClasses();
 
-        Name ??= GetType().Name;
-        Name = Name.ToLowerSnakeCase();
+        //Name ??= GetType().Name;
+        //Name = Name?.ToLowerSnakeCase();
 
         return base.OnParametersSetAsync();
     }
@@ -44,9 +46,9 @@ public abstract class BaseComponent : ComponentBase
             : string.Empty;
     }
 
-    protected string GetFullname()
+    protected string? GetFullname()
     {
-        return (Parent != null)
+        return (Parent is not null && Name is not null)
                 ? Parent?.GetFullname() + ">" + Name
                 : Name;
     }
