@@ -1,0 +1,13 @@
+﻿@inherits BaseComponentWithRequiredChildContent
+<CascadingValue Name="Parent" Value="@this.Parent" IsFixed="true">
+    <Button  
+            Id="@Id"
+            Name="@Name"
+            Class="@GetFinalClassNames()"
+            Style="@Style"
+            Tooltip="@Tooltip"
+            ChildContent="@ChildContent"
+            AriaLabel="@AriaLabel"
+            AriaLabelledby="@AriaLabelledby"
+            AriaRole="@AriaRole" /> 
+</CascadingValue>

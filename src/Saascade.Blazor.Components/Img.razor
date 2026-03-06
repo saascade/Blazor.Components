@@ -1,0 +1,13 @@
+﻿@inherits BaseComponent
+<CascadingValue Name="Parent" Value="@this" IsFixed="true">
+    <img id="@Id" data-name="@Name" alt="@Alt" src="@Src" data-fullname="@GetFullname()" class="@GetFinalClassNames()" style="@Style" title="@Tooltip"/>
+</CascadingValue>
+@code 
+{
+    [Parameter, EditorRequired]
+    public string Alt { get; set; }
+
+    [Parameter, EditorRequired]
+    public string Src { get; set; }
+
+}

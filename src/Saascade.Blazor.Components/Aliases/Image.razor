@@ -1,0 +1,21 @@
+﻿@inherits BaseComponent
+<CascadingValue Name="Parent" Value="@this.Parent" IsFixed="true">
+    <Img Id="@Id"
+         Src="@Src"
+         Alt="@Alt"
+         Name="@Name"
+         Class="@GetFinalClassNames()"
+         Style="@Style"
+         Tooltip="@Tooltip"
+         AriaLabel="@AriaLabel"
+         AriaLabelledby="@AriaLabelledby"
+         AriaRole="@AriaRole" />
+</CascadingValue>
+@code
+{
+    [Parameter, EditorRequired]
+    public string Alt { get; set; }
+
+    [Parameter, EditorRequired]
+    public string Src { get; set; }
+}
