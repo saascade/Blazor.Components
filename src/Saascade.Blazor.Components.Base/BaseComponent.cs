@@ -50,17 +50,32 @@ public abstract class BaseComponent : ComponentBase
     {
         if (Name is null) { return null; }
 
-        if (Parent is not null)
+        if (Parent is null) { return Name; }
+
+        var parentFullName = RecursivelyGetParentFullname(this);// Parent?.GetFullname();
+        if (parentFullName is not null)
         {
-            var parentFullName = Parent?.GetFullname();
-            if (parentFullName is not null)
-            {
-                return parentFullName + ">" + Name;
-            }
+            return parentFullName + ">" + Name;
         }
 
         return Name;
     }
+
+    private string? RecursivelyGetParentFullname(BaseComponent component)
+    {
+        if (component.Parent is null) { return null; }
+
+        var parentFullName = Parent?.GetFullname();
+        if (parentFullName is null)
+        {
+            return RecursivelyGetParentFullname(component.Parent);
+        }
+        else
+        {
+            return parentFullName;
+        }
+    }
+
 
     protected string GetFinalClassNames()
     {
