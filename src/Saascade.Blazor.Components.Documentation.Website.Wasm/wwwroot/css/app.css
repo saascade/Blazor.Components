@@ -1,0 +1,15 @@
+/* Global app styles to remove default body margin and set full-viewport background */
+html, body {
+  height: 100%;
+  margin: 0; /* remove default browser margin that looks like a white border */
+  background: #0f1720; /* match the dark app background so edges are seamless */
+}
+
+#app {
+  min-height: 100%;
+}
+
+/* ensure our root app-shell fills the viewport */
+.app-shell {
+  min-height: 100vh;
+}

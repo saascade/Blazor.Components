@@ -1,3 +1,53 @@
 ﻿@inherits LayoutComponentBase
 
-@Body
+<div class="app-shell">
+  <header class="topbar">
+    <div class="topbar-left">
+      <div class="brand">Saascade Docs</div>
+      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+    </div>
+    <div class="topbar-center">
+      <nav class="topnav">
+        <a class="topnav-item">Home</a>
+        <a class="topnav-item">Docs</a>
+        <a class="topnav-item">Blog</a>
+      </nav>
+    </div>
+    <div class="topbar-right">
+      <a class="top-action">Pricing</a>
+      <a class="top-action">Account</a>
+    </div>
+  </header>
+
+
+  <div class="layout-body">
+    <aside class="sidebar" aria-label="Primary navigation">
+      @* <div class="sidebar-brand">Blazorise</div> *@
+      <div class="sidebar-search"><input placeholder="Search..." /></div>
+      <nav class="sidebar-nav">
+        <ul>
+          <li class="active"><a class="sidebar-link" href="#">Overview</a></li>
+          <li><a class="sidebar-link" href="#">Quick Start</a></li>
+          <li><a class="sidebar-link" href="#">Integrations</a></li>
+          <li><a class="sidebar-link" href="#">Testing</a></li>
+          <li><a class="sidebar-link" href="#">Templates</a></li>
+          <li><a class="sidebar-link" href="#">Components</a></li>
+          <li><a class="sidebar-link" href="#">Extensions</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+
+
+    <main class="main-content">
+      <div class="page-header">
+        <div class="breadcrumb">Documentation / Components / Bar</div>
+        <h1>Saascade Bar component</h1>
+        <p class="lead">A responsive navbar that can support images, links, buttons, and dropdowns.</p>
+      </div>
+      <section class="doc-body">
+        @Body
+      </section>
+    </main>
+  </div>
+</div>
