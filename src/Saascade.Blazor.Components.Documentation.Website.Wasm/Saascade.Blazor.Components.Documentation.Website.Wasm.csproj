@@ -10,8 +10,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Saascade.Blazor.Components.DesignSystems\Saascade.Blazor.Components.DesignSystems.csproj" />
     <ProjectReference Include="..\Saascade.Blazor.Components\Saascade.Blazor.Components.csproj" />
+    <ProjectReference Include="..\Saascade.Blazor.DesignSystems\Saascade.Blazor.DesignSystems.csproj" />
   </ItemGroup>
 
 </Project>

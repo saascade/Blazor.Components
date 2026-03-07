@@ -2,7 +2,7 @@
 
 public enum CssFramework
 { 
-    BlankSlate = 0, //None
+    Custom = 0, //None
 
     Bootstrap4,
     Bootstrap5,

@@ -8,11 +8,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\" />
+    <ProjectReference Include="..\Saascade.Blazor.Components.Base\Saascade.Blazor.Components.Base.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Saascade.Blazor.Components.Base\Saascade.Blazor.Components.Base.csproj" />
+    <Folder Include="wwwroot\designSystems\bootstrap5\" />
+    <Folder Include="wwwroot\designSystems\tailwind\" />
   </ItemGroup>
 
 </Project>
