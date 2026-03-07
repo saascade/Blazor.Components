@@ -4,6 +4,7 @@
   </Folder>
   <Folder Name="/Library/">
     <Project Path="Saascade.Blazor.Components.Base/Saascade.Blazor.Components.Base.csproj" Id="03ddfff9-0012-49e1-8904-4c92dc74ceb0" />
+    <Project Path="Saascade.Blazor.Components.DesignSystems/Saascade.Blazor.Components.DesignSystems.csproj" Id="7eec5762-7dc4-49c4-8327-b6f644964a89" />
     <Project Path="Saascade.Blazor.Components/Saascade.Blazor.Components.csproj" Id="93335d29-a3bb-46fa-8f88-fcccef8f549f" />
   </Folder>
 </Solution>

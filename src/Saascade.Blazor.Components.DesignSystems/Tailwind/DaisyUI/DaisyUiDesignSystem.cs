@@ -3,12 +3,12 @@ using Saascade.Blazor.Components.Aliases;
 using Saascade.Blazor.Components.Base;
 using Saascade.Blazor.Components.Base.Extensions;
 
-namespace Saascade.Blazor.Components.ComponentLibraries.Tailwind;
+namespace Saascade.Blazor.Components.DesignSystems.Tailwind.DaisyUI;
 
 //https://daisyui.com/components/button/
-public class DaisyUIComponentLibrary : IComponentLibrary
+public class DaisyUiDesignSystem : IDesignSystem
 {
-    public ComponentLibraryFoundation Foundation { get; } = ComponentLibraryFoundation.Tailwind;
+    public CssFramework CssFramework { get; } = CssFramework.Tailwind;
 
     public string GetClassesForComponent<T>(T component) where T : BaseComponent
         => component.GetStandardCssClassesForBasicHtmlElements() ?? component.GetType().Name switch
@@ -31,6 +31,14 @@ public class DaisyUIComponentLibrary : IComponentLibrary
             nameof(Hero) => "hero bg-base-200 min-h-screen",
             _ => component.GetType().Name.ToLowerSnakeCase()
         };
-     
 
+    public string[] GetStylesheetReferences() => 
+        [
+            """ <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" /> """
+        ];
+
+    public string[] GetJavaScriptReferences() => 
+        [
+            """ <script src="https://cdn.jsdelivr.net/npm/@@tailwindcss/browser@4"></script> """,
+        ];
 }

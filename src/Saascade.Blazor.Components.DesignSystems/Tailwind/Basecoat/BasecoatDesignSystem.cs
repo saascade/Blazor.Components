@@ -1,13 +1,14 @@
 ﻿using Saascade.Blazor.Components.Aliases;
 using Saascade.Blazor.Components.Base;
 using Saascade.Blazor.Components.Base.Extensions;
+using System.Diagnostics.Metrics;
 
-namespace Saascade.Blazor.Components.ComponentLibraries.Tailwind;
+namespace Saascade.Blazor.Components.DesignSystems.Tailwind.Basecoat;
 
 //https://basecoatui.com/
-public class BasecoatComponentLibrary : IComponentLibrary
+public class BasecoatDesignSystem : IDesignSystem
 {
-    public ComponentLibraryFoundation Foundation { get; } = ComponentLibraryFoundation.Tailwind;
+    public CssFramework CssFramework { get; } = CssFramework.Tailwind;
  
 
     public string GetClassesForComponent<T>(T component) where T : BaseComponent
@@ -21,5 +22,14 @@ public class BasecoatComponentLibrary : IComponentLibrary
             nameof (Card) => "card",  
             _ => component.GetType().Name.ToLowerSnakeCase()
         };
-     
+
+    public string[] GetStylesheetReferences() => 
+        [
+            """ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/basecoat-css@0.3.11/dist/basecoat.cdn.min.css"> """ 
+        ];
+
+    public string[] GetJavaScriptReferences() => 
+        [ 
+         """ <script src="https://cdn.jsdelivr.net/npm/basecoat-css@0.3.11/dist/js/all.min.js" defer></script> """
+        ];
 }

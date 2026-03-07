@@ -40,7 +40,7 @@ public abstract class BaseComponent : ComponentBase
 
     private string GetComponentLibraryCssClasses()
     {
-        var componentLibrary = serviceProvider.GetService<IComponentLibrary>();
+        var componentLibrary = serviceProvider.GetService<IDesignSystem>();
         return componentLibrary != null 
             ? componentLibrary.GetClassesForComponent(this) 
             : string.Empty;

@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+  <ItemGroup>
+    <Folder Include="Bootstrap4\" />
+    <Folder Include="Bootstrap5\Handdrawn\" />
+    <Folder Include="Tailwind\DaisyUI\Themes\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Saascade.Blazor.Components\Saascade.Blazor.Components.csproj" />
+  </ItemGroup>
+
+</Project>
