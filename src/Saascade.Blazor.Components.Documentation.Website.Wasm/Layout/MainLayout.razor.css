@@ -3,7 +3,6 @@
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
     color: #e6eef8;
     background: #1F232A;
-    /*    background: #0f1720;*/
     min-height: 100vh;
 }
 
@@ -17,18 +16,19 @@
     height: 50px;
     display: flex;
     align-items: center;
-    padding: 0 16px;
+    gap: 0px;
     background: #0b1220;
     border-bottom: 1px solid rgba(255,255,255,0.03);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 }
 
 .topbar-left {
+    width: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 12px;
-    margin-left: 12px;
+    /*    margin-left: 30px;*/
     transition: width 0.3s ease;
 }
 
@@ -43,27 +43,19 @@
 .brand {
     font-weight: 700;
     color: #ffffff;
-    padding-right: 8px;
 }
-
-/*.menu-toggle {
-    background: transparent;
-    border: none;
-    color: #9fb0c9;
-    font-size: 18px;
-    cursor: pointer;
-}*/
 
 .menu-toggle {
     cursor: pointer;
-/*    padding-left: 1px;*/
+    font-size: 20px;
+    padding: 5px 5px;
+    padding-left: 10px;
 }
 
 .topbar-center {
     flex: 1;
     display: flex;
     justify-content: flex-start;
-    padding-left: 55px;
 }
 
 .topbar-center.closed {
@@ -72,7 +64,7 @@
 
 .topnav {
     display: flex;
-    gap: 14px;
+    margin-left: 0px;
 }
 
 .topnav-link {
@@ -91,13 +83,14 @@
     display: flex;
     font-size: 14px;
     gap: 12px;
+    padding-right: 10px;
 }
 
 .top-action {
     color: #ffffff;
     font-size: 14px;
     text-decoration: none;
-    padding: 6px 10px;
+    padding: 5px 5px;
     border-radius: 6px;
 }
 
