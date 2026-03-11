@@ -14,8 +14,8 @@
     }
 }
 
-<div class="app-shell">
-  <header class="topbar">
+<div class="app-shell @(darkMode ? "dark-theme" : "light-theme")">
+    <header class="topbar">
     <div class="topbar-left @(menuOpen ? "open" : "closed")">
       <div class="brand">Saascade Docs</div>
 
@@ -30,9 +30,9 @@
     <div class="topbar-right">
         <a class="top-action" href="pricing">Pricing</a>
         <a class="top-action" href="account">Account</a>
-        @* <button class="theme-toggle" @onclick="ToggleTheme">
+        <button class="theme-toggle" @onclick="ToggleTheme">
             🌙
-        </button> *@
+        </button>
     </div>
   </header>
 
@@ -77,10 +77,13 @@
     {
         menuOpen = !menuOpen;
     }
-    // private void ToggleTheme(MouseEventArgs args)
-    // {
-    //     throw new NotImplementedException();
-    // }
+
+    bool darkMode = true;
+
+    void ToggleTheme()
+    {
+        darkMode = !darkMode;
+    }
 }
 
 @* 
